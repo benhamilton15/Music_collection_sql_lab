@@ -38,6 +38,9 @@ album1.update()
 
 p album1.artist()
 
+p album1.find(album1.id)
+p artist1.find(artist1.id)
+
 
   # binding.pry
   # nil

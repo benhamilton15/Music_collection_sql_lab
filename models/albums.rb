@@ -58,6 +58,16 @@ def artist()
   return artist
 end
 
+def find(id)
+  sql = "SELECT * FROM albums WHERE id = $1"
+  values = [id]
+  result = SqlRunner.run(sql, values)
+  # binding.pry
+  album_data = result[0]
+  album = Album.new(album_data)
+  return album
+end
+
 def self.delete_all()
   sql = "DELETE FROM albums"
   SqlRunner.run(sql)
